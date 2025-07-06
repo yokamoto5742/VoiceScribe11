@@ -7,7 +7,7 @@ import tkinter as tk
 from datetime import datetime, timedelta
 from typing import Any, Callable, Dict, List, Optional
 
-from external_service.groq_api import transcribe_audio
+from external_service.elevenlabs_api import transcribe_audio
 from service.audio_recorder import save_audio
 from service.text_processing import copy_and_paste_transcription
 
