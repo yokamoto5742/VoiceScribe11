@@ -6,7 +6,7 @@ import traceback
 from tkinter import messagebox
 
 from app_window import VoiceInputManager
-from external_service.groq_api import setup_groq_client
+from external_service.elevenlabs_api import setup_elevenlabs_client
 from utils.config_manager import load_config
 from utils.log_rotation import setup_logging, setup_debug_logging
 from service.audio_recorder import AudioRecorder
@@ -31,7 +31,7 @@ def main():
         logging.info("アプリケーションを開始します")
 
         recorder = AudioRecorder(config)
-        client = setup_groq_client()
+        client = setup_elevenlabs_client()
         replacements = load_replacements()
         root = tk.Tk()
         app = VoiceInputManager(root, config, recorder, client, replacements, VERSION)
